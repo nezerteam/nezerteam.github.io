@@ -27,11 +27,15 @@ body{
 header{
   text-align:center;
   padding:50px 20px;
+  position: relative;
 }
 
+/* Мягкая тень вокруг логотипа */
 header img{
   width:150px;
   margin-bottom:20px;
+  border-radius:20px; /* скругление */
+  box-shadow: 0 0 25px rgba(255,26,26,0.5);
 }
 
 header h1{
@@ -49,13 +53,13 @@ header p{
   letter-spacing:1px;
 }
 
+/* Основная команда и замены */
 .roster{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:30px;
-  padding:50px 20px;
-  flex:1;
+  padding:30px 20px;
 }
 
 .card{
@@ -92,6 +96,16 @@ header p{
   font-size:14px;
   color:#ccc;
   margin-top:5px;
+}
+
+/* Подзаголовки */
+.subsection-title{
+  text-align:center;
+  font-size:24px;
+  color:#ff1a1a;
+  margin-top:40px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #ff1a1a;
 }
 
 /* Модалки */
@@ -146,6 +160,7 @@ footer{
   padding:20px;
   color:#ccc;
   border-top:1px solid #111;
+  margin-top:20px;
 }
 </style>
 </head>
@@ -158,47 +173,65 @@ footer{
   <p>Professional Esports Organization</p>
 </header>
 
+<!-- Основная команда -->
+<div class="subsection-title">Основная команда</div>
 <section class="roster">
-
-  <!-- Игрок 1 -->
   <div class="card" onclick="openCard('modal1')">
     <img src="https://via.placeholder.com/150" alt="">
     <h3>maTTeO?</h3>
     <p>Role: Lurker</p>
   </div>
-
-  <!-- Игрок 2 -->
   <div class="card" onclick="openCard('modal2')">
     <img src="https://via.placeholder.com/150" alt="">
     <h3>Happyz</h3>
     <p>Role: Sniper</p>
   </div>
-
-  <!-- Игрок 3 -->
   <div class="card" onclick="openCard('modal3')">
     <img src="https://via.placeholder.com/150" alt="">
     <h3>NEZER Nova</h3>
     <p>Role: Sniper</p>
   </div>
-
-  <!-- Игрок 4 -->
   <div class="card" onclick="openCard('modal4')">
     <img src="https://via.placeholder.com/150" alt="">
     <h3>Ssaywo</h3>
     <p>Role: Rifler</p>
   </div>
-
-  <!-- Игрок 5 -->
   <div class="card" onclick="openCard('modal5')">
     <img src="https://via.placeholder.com/150" alt="">
     <h3>NEZER Ace</h3>
     <p>Role: Leader</p>
   </div>
-
 </section>
 
-<!-- Модалки -->
+<!-- Замены -->
+<div class="subsection-title">Игроки замены</div>
+<section class="roster">
+  <div class="card" onclick="openCard('modal6')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>Sub1</h3>
+    <p>Role: Support</p>
+  </div>
+  <div class="card" onclick="openCard('modal7')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>Sub2</h3>
+    <p>Role: Sniper</p>
+  </div>
+</section>
 
+<!-- Контакты -->
+<div class="subsection-title">Контакты</div>
+<section class="roster" style="justify-content:center; gap:20px;">
+  <div class="card">
+    <h3>Telegram</h3>
+    <p>@TeamNezer</p>
+  </div>
+  <div class="card">
+    <h3>Email</h3>
+    <p>esportsnezerteam@gmail.com</p>
+  </div>
+</section>
+
+<!-- Модалки для основной команды -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal1')">&times;</span>
@@ -210,7 +243,6 @@ footer{
     <a href="https://steamcommunity.com/id/maTTeO" target="_blank"><button>Steam</button></a>
   </div>
 </div>
-
 <div id="modal2" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal2')">&times;</span>
@@ -222,7 +254,6 @@ footer{
     <a href="https://steamcommunity.com/id/Happyz" target="_blank"><button>Steam</button></a>
   </div>
 </div>
-
 <div id="modal3" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal3')">&times;</span>
@@ -234,7 +265,6 @@ footer{
     <a href="https://steamcommunity.com/id/NEZERNova" target="_blank"><button>Steam</button></a>
   </div>
 </div>
-
 <div id="modal4" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal4')">&times;</span>
@@ -246,7 +276,6 @@ footer{
     <a href="https://steamcommunity.com/id/ssaywo/" target="_blank"><button>Steam</button></a>
   </div>
 </div>
-
 <div id="modal5" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal5')">&times;</span>
@@ -258,6 +287,8 @@ footer{
     <a href="https://steamcommunity.com/id/NEZERAce" target="_blank"><button>Steam</button></a>
   </div>
 </div>
+
+<!-- Модалки для замен можно добавить аналогично -->
 
 <footer>
   © 2026 NEZER TEAM. All rights reserved.
