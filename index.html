@@ -16,6 +16,9 @@
 body{
   background:black;
   color:white;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 header{
@@ -45,16 +48,18 @@ header p{
   flex-wrap:wrap;
   gap:30px;
   padding:50px 20px;
+  flex:1;
 }
 
 .card{
   background:#111;
-  width:230px;
+  width:180px;
   padding:20px;
   border-radius:15px;
   border:1px solid #222;
   transition:0.3s;
   text-align:center;
+  cursor:pointer;
 }
 
 .card:hover{
@@ -63,10 +68,10 @@ header p{
 }
 
 .card img{
-   width:120px;
+  width:120px;
   height:120px;
-  object-fit:cover;
   border-radius:50%;
+  object-fit:cover;
   margin:0 auto;
   display:block;
 }
@@ -80,6 +85,53 @@ header p{
   font-size:14px;
   color:#ccc;
   margin-top:5px;
+}
+
+/* Модальные окна */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 100; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.85); 
+}
+
+.modal-content {
+  background-color: #111;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #ff1a1a;
+  width: 300px;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.close {
+  color: #ff1a1a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button {
+  background: #ff1a1a;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff4d4d;
 }
 
 footer{
@@ -101,49 +153,121 @@ footer{
 
 <section class="roster">
 
-  <div class="card">
-    <img src="https://via.placeholder.com/230" alt="">
-    <h3>maTTeO? </h3>
+  <!-- Игрок 1 -->
+  <div class="card" onclick="openCard('modal1')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>maTTeO?</h3>
     <p>Role: Lurker</p>
-    <p>Age: 15</p>
   </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/230" alt="">
-    <h3>Happyz </h3>
+  <!-- Игрок 2 -->
+  <div class="card" onclick="openCard('modal2')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>Happyz</h3>
     <p>Role: Sniper</p>
-    <p>Age: 19</p>
   </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/230" alt="">
+  <!-- Игрок 3 -->
+  <div class="card" onclick="openCard('modal3')">
+    <img src="https://via.placeholder.com/150" alt="">
     <h3>NEZER Nova</h3>
     <p>Role: Sniper</p>
-    <p>Age: 17</p>
   </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/230" alt="">
-    <h3>NEZER Nova</h3>
-    <p>Role: Sniper</p>
-    <p>Age: 17</p>
+  <!-- Игрок 4 -->
+  <div class="card" onclick="openCard('modal4')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>NEZER Star</h3>
+    <p>Role: Rifler</p>
   </div>
 
-
-  <div class="card">
-    <img src="https://via.placeholder.com/230" alt="">
-    <h3>NEZER Nova</h3>
-    <p>Role: Sniper</p>
-    <p>Age: 17</p>
+  <!-- Игрок 5 -->
+  <div class="card" onclick="openCard('modal5')">
+    <img src="https://via.placeholder.com/150" alt="">
+    <h3>NEZER Ace</h3>
+    <p>Role: Leader</p>
   </div>
-
 
 </section>
-<hr style="margin-top: 200px; width: 80%; border: 1px solid #000;">
 
-<footer style="margin-top: 20px; font-size: 14px;">
+<!-- Модальные окна -->
+<!-- Игрок 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCard('modal1')">&times;</span>
+    <h2>maTTeO?</h2>
+    <p>Role: Lurker</p>
+    <p>Age: 15</p>
+    <p>Mini Biography: Отличный игрок, любит кланы и стратегии.</p>
+    <a href="https://www.faceit.com/ru/players/maTTeO" target="_blank"><button>Faceit</button></a>
+    <a href="https://steamcommunity.com/id/maTTeO" target="_blank"><button>Steam</button></a>
+  </div>
+</div>
+
+<!-- Игрок 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCard('modal2')">&times;</span>
+    <h2>Happyz</h2>
+    <p>Role: Sniper</p>
+    <p>Age: 19</p>
+    <p>Mini Biography: Отличный снайпер, любит тактику и скорость.</p>
+    <a href="https://www.faceit.com/ru/players/Happyz" target="_blank"><button>Faceit</button></a>
+    <a href="https://steamcommunity.com/id/Happyz" target="_blank"><button>Steam</button></a>
+  </div>
+</div>
+
+<!-- Игрок 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCard('modal3')">&times;</span>
+    <h2>NEZER Nova</h2>
+    <p>Role: Sniper</p>
+    <p>Age: 17</p>
+    <p>Mini Biography: Мастер точных выстрелов, стратег команды.</p>
+    <a href="https://www.faceit.com/ru/players/NEZERNova" target="_blank"><button>Faceit</button></a>
+    <a href="https://steamcommunity.com/id/NEZERNova" target="_blank"><button>Steam</button></a>
+  </div>
+</div>
+
+<!-- Игрок 4 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCard('modal4')">&times;</span>
+    <h2>Ssaywo</h2>
+    <p>Role: Rifler</p>
+    <p>Age: 16</p>
+    <p>Mini Biography: Активный игрок, быстрый и точный.</p>
+    <a href="https://www.faceit.com/ru/players/Presidioc/cs2/stats" target="_blank"><button>Faceit</button></a>
+    <a href="https://steamcommunity.com/id/ssaywo/" target="_blank"><button>Steam</button></a>
+  </div>
+</div>
+
+<!-- Игрок 5 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCard('modal5')">&times;</span>
+    <h2>NEZER Ace</h2>
+    <p>Role: Leader</p>
+    <p>Age: 18</p>
+    <p>Mini Biography: Лидер команды, умеет вести игру и мотивировать.</p>
+    <a href="https://www.faceit.com/ru/players/NEZERAce" target="_blank"><button>Faceit</button></a>
+    <a href="https://steamcommunity.com/id/NEZERAce" target="_blank"><button>Steam</button></a>
+  </div>
+</div>
+
+<footer>
   © 2026 NEZER TEAM. All rights reserved.
 </footer>
+
+<script>
+function openCard(id){
+  document.getElementById(id).style.display = "block";
+}
+function closeCard(id){
+  document.getElementById(id).style.display = "none";
+}
+</script>
 
 </body>
 </html>
