@@ -8,280 +8,182 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Фон киберпанк */
-body {
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 70%);
+body{
+  background:#0b0b0b;
   color:white;
   display:flex;
   flex-direction:column;
+  align-items:center;
   min-height:100vh;
-  background-attachment: fixed;
+  padding:40px 20px;
 }
 
-/* HEADER */
-header {
-  text-align:center;
-  padding:50px 20px;
-  position: relative;
-}
-
-/* Анимированное лого */
-header img {
-  width:150px;
-  margin-bottom:20px;
-  border-radius:20px;
-  box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff1a1a, 0 0 60px #ff1a1a;
-  animation: neonPulse 2s infinite alternate;
-}
-
-@keyframes neonPulse {
-  0% { box-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a; transform: scale(1); }
-  50% { box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff1a1a; transform: scale(1.05); }
-  100% { box-shadow: 0 0 30px #ff1a1a, 0 0 60px #ff1a1a; transform: scale(1); }
-}
-
-header h1 {
-  font-size:50px;
+h1{
+  font-family:'Orbitron', sans-serif;
   color:#ff1a1a;
-  letter-spacing:4px;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d;
+  margin-bottom:40px;
+  letter-spacing:3px;
 }
 
-header p {
-  color:#ccc;
-  margin-top:10px;
-  font-size:18px;
-  letter-spacing:1px;
-}
-
-/* Карточки */
-.roster {
+.team-container{
   display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
   gap:30px;
-  padding:30px 20px;
+  flex-wrap:wrap;
+  justify-content:center;
+  max-width:1200px;
 }
 
-.card {
-  background: rgba(20,20,20,0.8);
-  backdrop-filter: blur(5px);
-  width:180px;
-  padding:20px;
-  border-radius:15px;
-  border:1px solid #ff1a1a;
+/* Карточка */
+.player-card{
+  width:200px;
+  height:280px;
+  background:linear-gradient(145deg,#111,#1a1a1a);
+  border-radius:20px;
+  border:1px solid #222;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   transition:0.3s;
-  text-align:center;
   cursor:pointer;
 }
 
-.card:hover {
-  transform:translateY(-10px);
-  box-shadow:0 0 25px #ff1a1a;
+.player-card:hover{
+  border:1px solid #ff1a1a;
+  box-shadow:0 0 25px rgba(255,26,26,0.6);
+  transform:translateY(-8px);
 }
 
-.card img {
+.player-avatar{
   width:120px;
   height:120px;
   border-radius:50%;
   object-fit:cover;
-  margin:0 auto;
-  display:block;
-  border: 2px solid #ff1a1a;
+  margin-bottom:15px;
+  border:2px solid #333;
 }
 
-.card h3 {
-  margin-top:15px;
-  color:#ff1a1a;
+.player-name{
+  font-size:18px;
+  margin-bottom:10px;
 }
 
-.card p {
+.player-stats{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#000;
+  padding:6px 12px;
+  border-radius:20px;
   font-size:14px;
-  color:#ccc;
-  margin-top:5px;
 }
 
-/* Подзаголовки */
-.subsection-title {
-  text-align:center;
-  font-size:26px;
+.level{
+  width:24px;
+  height:24px;
+  background:#00ff66;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:bold;
+  color:black;
+}
+
+/* Заголовок секции */
+.section-title{
+  margin:40px 0 20px;
+  font-family:'Orbitron', sans-serif;
   color:#ff1a1a;
-  margin-top:40px;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 8px #ff1a1a;
+  font-size:22px;
 }
 
-/* Контакты */
-.contacts .card {
-  width:200px;
-}
-
-.contacts .card a {
-  color:#ff1a1a;
-  text-decoration:none;
-  transition:0.2s;
-}
-
-.contacts .card a:hover {
-  color:#ff4d4d;
-}
-
-/* Модалки */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(10,10,10,0.95);
-}
-
-.modal-content {
-  background-color: rgba(17,17,17,0.95);
-  margin: auto;
-  padding: 20px;
-  border: 2px solid #ff1a1a;
-  width: 320px;
-  color: white;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.close {
-  color: #ff1a1a;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.modal-content a img {
-  width: 35px;
-  height: 35px;
-  margin: 5px;
-  border-radius:5px;
-  transition: transform 0.2s;
-}
-
-.modal-content a img:hover{
-  transform: scale(1.2);
-}
-
-footer {
-  text-align:center;
-  padding:20px;
-  color:#ccc;
-  border-top:1px solid #111;
-  margin-top:20px;
-}
 </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.jpg" alt="NEZER TEAM Logo">
-  <h1>NEZER TEAM</h1>
-  <p>Professional Esports Organization</p>
-</header>
+<h1>NEZER TEAM</h1>
 
-<!-- Основная команда -->
-<div class="subsection-title">Основная команда</div>
-<section class="roster">
-  <div class="card" onclick="openCard('modal1')">
-    <img src="avatar1.jpg" alt="maTTeO?">
-    <h3>maTTeO?</h3>
-    <p>Role: Lurker</p>
-  </div>
-  <div class="card" onclick="openCard('modal2')">
-    <img src="avatar2.jpg" alt="Happyz">
-    <h3>Happyz</h3>
-    <p>Role: Sniper</p>
-  </div>
-  <div class="card" onclick="openCard('modal3')">
-    <img src="avatar3.jpg" alt="Aiyka">
-    <h3>Aiyka</h3>
-    <p>Role: Support</p>
-  </div>
-  <div class="card" onclick="openCard('modal4')">
-    <img src="avatar4.jpg" alt="mo07zyy">
-    <h3>mo07zyy</h3>
-    <p>Role: Rifler</p>
-  </div>
-  <div class="card" onclick="openCard('modal5')">
-    <img src="avatar5.jpg" alt="NEZOK">
-    <h3>NEZOK</h3>
-    <p>Role: Leader|Entry</p>
-  </div>
-</section>
+<div class="section-title">Основной состав</div>
+<div class="team-container">
 
-<!-- Замены -->
-<div class="subsection-title">Игроки замены</div>
-<section class="roster">
-  <a href="profile-presidioc.html" target="_blank" style="text-decoration:none;">
-    <div class="card">
-      <img src="avatar6.jpg" alt="ssaywo">
-      <h3>ssaywo</h3>
-      <p>Role: Rifler</p>
+  <div class="player-card">
+    <img src="avatar1.png" class="player-avatar">
+    <div class="player-name">maTTeO?</div>
+    <div class="player-stats">
+      <div class="level">4</div>
+      1020
     </div>
-  </a>
+  </div>
 
-  <div class="card" onclick="openCard('modal6')">
-    <img src="avatar7.jpg" alt="y9dda">
-    <h3>y9dda</h3>
-    <p>Role: Rifler</p>
+  <div class="player-card">
+    <img src="avatar2.png" class="player-avatar">
+    <div class="player-name">Happyz</div>
+    <div class="player-stats">
+      <div class="level">3</div>
+      890
+    </div>
   </div>
-</section>
 
-<!-- Контакты -->
-<div class="subsection-title">Контакты</div>
-<section class="roster contacts" style="justify-content:center; gap:30px; margin-bottom:50px;">
-  <div class="card">
-    <h3>Telegram</h3>
-    <p><a href="https://t.me/nezer_team" target="_blank">@TeamNezer</a></p>
+  <div class="player-card">
+    <img src="avatar3.png" class="player-avatar">
+    <div class="player-name">Aiyka</div>
+    <div class="player-stats">
+      <div class="level">2</div>
+      760
+    </div>
   </div>
-  <div class="card">
-    <h3>Email</h3>
-    <p>esportsnezerteam@gmail.com</p>
-  </div>
-</section>
 
-<!-- Модалка для ssaywo -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeCard('modal1')">&times;</span>
-    <h2>ssaywo</h2>
-    <p>Role: Rifler</p>
-    <p>Age: 14</p>
-    <p>Mini Biography: Хороший игрок замены, быстро передвигается по мапе.</p>
-    <a href="https://www.faceit.com/ru/players/Presidioc" target="_blank"><img src="faceit_icon.png" alt="Faceit"></a>
-    <a href="https://steamcommunity.com/id/ssaywo/" target="_blank"><img src="steam_icon.png" alt="Steam"></a>
+  <div class="player-card">
+    <img src="avatar4.png" class="player-avatar">
+    <div class="player-name">mo07zyy</div>
+    <div class="player-stats">
+      <div class="level">3</div>
+      845
+    </div>
   </div>
+
+  <div class="player-card">
+    <img src="avatar5.png" class="player-avatar">
+    <div class="player-name">NEZOK</div>
+    <div class="player-stats">
+      <div class="level">5</div>
+      1205
+    </div>
+  </div>
+
 </div>
 
-<footer>
-  © 2026 NEZER TEAM. All rights reserved.
-</footer>
+<div class="section-title">Замена</div>
+<div class="team-container">
 
-<script>
-function openCard(id){
-  document.getElementById(id).style.display = "block";
-}
-function closeCard(id){
-  document.getElementById(id).style.display = "none";
-}
-</script>
+  <div class="player-card" onclick="window.location.href='profile-presidioc.html'">
+    <img src="avatar6.jpeg" class="player-avatar">
+    <div class="player-name">ssaywo</div>
+    <div class="player-stats">
+      <div class="level">3</div>
+      866
+    </div>
+  </div>
+
+  <div class="player-card">
+    <img src="avatar7.png" class="player-avatar">
+    <div class="player-name">y9dda</div>
+    <div class="player-stats">
+      <div class="level">2</div>
+      652
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
