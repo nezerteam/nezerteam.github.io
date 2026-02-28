@@ -1,72 +1,143 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Presidioc | NEZER TEAM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEZER TEAM</title>
+    <style>
+        /* Reset */
+        * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: white;
-  text-align: center;
-}
+        body {
+            background-color: #fff;
+            color: #222;
+        }
 
-.profile-container {
-  margin-top: 120px;
-}
+        header {
+            background-color: #c8102e; /* красный */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-.player-name {
-  font-size: 40px;
-  color: red;
-}
+        header img {
+            height: 60px;
+            vertical-align: middle;
+        }
 
-.player-role {
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
 
-.profile-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.profile-btn {
-  padding: 12px 30px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-.profile-btn:hover {
-  background-color: darkred;
-  transform: scale(1.08);
-}
-</style>
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
+        .section-title {
+            color: #c8102e;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .content-box {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c8102e;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c8102e;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a50b23;
+        }
+    </style>
 </head>
 <body>
 
-<div class="profile-container">
-  <h1 class="player-name">Presidioc</h1>
-  <p class="player-role">CS2 Player</p>
+    <header>
+        <img src="logo.png" alt="NEZER TEAM Logo">
+        <h1>NEZER TEAM</h1>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#team">Команда</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
 
-  <div class="profile-links">
-    <a href="https://www.faceit.com/ru/players/Presidioc/cs2/stats" target="_blank">
-      <button class="profile-btn">Faceit</button>
-    </a>
+    <main>
+        <section id="about">
+            <h2 class="section-title">О нас</h2>
+            <div class="content-box">
+                NEZER TEAM — это команда стримеров, объединяющая игроков CS2 и фанатов кейсов.
+            </div>
+        </section>
 
-    <a href="https://steamcommunity.com/id/ssaywo/" target="_blank">
-      <button class="profile-btn">Steam</button>
-    </a>
-  </div>
-</div>
+        <section id="team">
+            <h2 class="section-title">Команда</h2>
+            <div class="content-box">
+                <p>Наши игроки и стримеры делают контент интересным и динамичным!</p>
+                <ul>
+                    <li>Игрок 1</li>
+                    <li>Игрок 2</li>
+                    <li>Игрок 3</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Контакты</h2>
+            <div class="content-box">
+                <p>Напишите нам: <a href="mailto:team@nezer.com" class="btn">team@nezer.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 NEZER TEAM. Все права защищены.
+    </footer>
+
+    <script>
+        // Простая плавная прокрутка при кликах на меню
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+            });
+        });
+    </script>
 
 </body>
 </html>
