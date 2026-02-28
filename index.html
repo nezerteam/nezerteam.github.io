@@ -15,25 +15,36 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Фон киберпанк */
 body {
-  background: url('background.jpg') no-repeat center center/cover;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 70%);
   color:white;
   display:flex;
   flex-direction:column;
   min-height:100vh;
+  background-attachment: fixed;
 }
 
+/* HEADER */
 header {
   text-align:center;
   padding:50px 20px;
   position: relative;
 }
 
+/* Анимированное лого */
 header img {
   width:150px;
   margin-bottom:20px;
   border-radius:20px;
-  box-shadow: 0 0 30px rgba(255,26,26,0.6);
+  box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff1a1a, 0 0 60px #ff1a1a;
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a; transform: scale(1); }
+  50% { box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff1a1a; transform: scale(1.05); }
+  100% { box-shadow: 0 0 30px #ff1a1a, 0 0 60px #ff1a1a; transform: scale(1); }
 }
 
 header h1 {
@@ -41,7 +52,7 @@ header h1 {
   color:#ff1a1a;
   letter-spacing:4px;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 15px #ff1a1a;
+  text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d;
 }
 
 header p {
@@ -61,7 +72,8 @@ header p {
 }
 
 .card {
-  background: linear-gradient(145deg, #111, #222);
+  background: rgba(20,20,20,0.8);
+  backdrop-filter: blur(5px);
   width:180px;
   padding:20px;
   border-radius:15px;
@@ -83,6 +95,7 @@ header p {
   object-fit:cover;
   margin:0 auto;
   display:block;
+  border: 2px solid #ff1a1a;
 }
 
 .card h3 {
@@ -111,6 +124,16 @@ header p {
   width:200px;
 }
 
+.contacts .card a {
+  color:#ff1a1a;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.contacts .card a:hover {
+  color:#ff4d4d;
+}
+
 /* Модалки */
 .modal {
   display: none;
@@ -126,7 +149,7 @@ header p {
 }
 
 .modal-content {
-  background-color: #111;
+  background-color: rgba(17,17,17,0.95);
   margin: auto;
   padding: 20px;
   border: 2px solid #ff1a1a;
@@ -152,7 +175,7 @@ header p {
   transition: transform 0.2s;
 }
 
-.modal-content a img:hover {
+.modal-content a img:hover{
   transform: scale(1.2);
 }
 
@@ -226,7 +249,7 @@ footer {
 <section class="roster contacts" style="justify-content:center; gap:20px; margin-bottom:50px;">
   <div class="card">
     <h3>Telegram</h3>
-    <p><a href="https://t.me/nezer_team" target="_blank" style="color:#ff1a1a; text-decoration:none;">@TeamNezer</a></p>
+    <p><a href="https://t.me/nezer_team" target="_blank">@TeamNezer</a></p>
   </div>
   <div class="card">
     <h3>Email</h3>
@@ -234,20 +257,18 @@ footer {
   </div>
 </section>
 
-<!-- Модалки -->
+<!-- Модалка для ssaywo -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeCard('modal1')">&times;</span>
-    <h2>maTTeO?</h2>
-    <p>Role: Lurker</p>
-    <p>Age: 15</p>
-    <p>Mini Biography: Отличный игрок, любит кланы и стратегии.</p>
-    <a href="https://www.faceit.com/ru/players/maTTeO" target="_blank"><img src="faceit_icon.png" alt="Faceit"></a>
-    <a href="https://steamcommunity.com/id/maTTeO" target="_blank"><img src="steam_icon.png" alt="Steam"></a>
+    <h2>ssaywo</h2>
+    <p>Role: Rifler</p>
+    <p>Age: 14</p>
+    <p>Mini Biography: Хороший игрок замены, быстро передвигается по мапе.</p>
+    <a href="https://www.faceit.com/ru/players/Presidioc" target="_blank"><img src="faceit_icon.png" alt="Faceit"></a>
+    <a href="https://steamcommunity.com/id/ssaywo/" target="_blank"><img src="steam_icon.png" alt="Steam"></a>
   </div>
 </div>
-
-<!-- Модалки для остальных игроков можно добавить аналогично -->
 
 <footer>
   © 2026 NEZER TEAM. All rights reserved.
