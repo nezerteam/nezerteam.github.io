@@ -14,23 +14,9 @@ body {
   align-items:center;
   min-height:100vh;
 
-  /* Фон с рабочей картинкой */
-  background-image: url('https://i.ibb.co/wzHgW0v/cyber-bg2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+  /* Простой градиентный фон */
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: white;
-}
-
-/* Полупрозрачная накладка для текста */
-body::before {
-  content:"";
-  position: absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background-color: rgba(0,0,0,0.7);
-  z-index:-1;
 }
 
 .profile-container {
