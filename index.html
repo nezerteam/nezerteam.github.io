@@ -20,7 +20,6 @@ body{
   background:linear-gradient(-45deg, #0f0f0f, #1a0000, #111, #200000);
   background-size:400% 400%;
   animation:bgMove 12s ease infinite;
-  overflow-x:hidden;
 }
 
 @keyframes bgMove{
@@ -75,12 +74,6 @@ header h1{
   text-align:center;
   backdrop-filter:blur(10px);
   transition:0.4s;
-  animation:fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
 }
 
 .card:hover{
@@ -108,10 +101,14 @@ header h1{
   margin-bottom:10px;
 }
 
-.number{
-  font-size:18px;
+.elo{
+  display:inline-block;
+  padding:6px 14px;
+  background:linear-gradient(45deg,#ff2e2e,#a80000);
+  border-radius:20px;
+  font-size:14px;
   font-weight:bold;
-  color:#ffffff;
+  box-shadow:0 0 10px rgba(255,0,0,0.6);
 }
 
 .contacts{
@@ -146,23 +143,23 @@ header h1{
 <div class="roster">
   <div class="card">
     <img src="avatar1.jpg">
-    <h3>1. KAZ</h3>
+    <h3>KAZ</h3>
     <div class="role">IGL / Entry</div>
-    <div class="number">#1</div>
+    <div class="elo">ELO 2450</div>
   </div>
 
   <div class="card">
     <img src="avatar1.jpg">
-    <h3>2. sSaywo</h3>
+    <h3>sSaywo</h3>
     <div class="role">AWP</div>
-    <div class="number">#2</div>
+    <div class="elo">ELO 2380</div>
   </div>
 
   <div class="card">
     <img src="avatar1.jpg">
-    <h3>3. y9dda</h3>
+    <h3>y9dda</h3>
     <div class="role">Rifler</div>
-    <div class="number">#3</div>
+    <div class="elo">ELO 2520</div>
   </div>
 </div>
 
@@ -171,16 +168,16 @@ header h1{
 <div class="roster">
   <div class="card">
     <img src="avatar1.jpg">
-    <h3>4. PlayerX</h3>
+    <h3>PlayerX</h3>
     <div class="role">Support</div>
-    <div class="number">#4</div>
+    <div class="elo">ELO 2200</div>
   </div>
 
   <div class="card">
     <img src="avatar1.jpg">
-    <h3>5. PlayerY</h3>
+    <h3>PlayerY</h3>
     <div class="role">Flex</div>
-    <div class="number">#5</div>
+    <div class="elo">ELO 2100</div>
   </div>
 </div>
 
