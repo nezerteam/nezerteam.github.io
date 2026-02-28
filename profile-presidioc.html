@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEZER TEAM - Профиль</title>
+<title>@TeamNezer</title>
 <style>
     body {
         margin:0;
@@ -11,80 +11,43 @@
         font-family: Arial, sans-serif;
         background: #fff;
         color: #222;
+        text-align: center;
     }
     header {
         background-color: #c8102e;
         color: #fff;
-        text-align: center;
-        padding: 30px 20px;
+        padding: 40px 20px;
     }
     header img {
-        height: 80px;
+        height: 100px;
         border-radius: 50%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     header h1 {
-        margin: 10px 0 5px 0;
-        font-size: 32px;
-    }
-    header p {
-        font-size: 18px;
-        color: #fff;
-        margin-bottom: 15px;
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 10px;
-    }
-    nav a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-    nav a:hover {
-        background-color: #a50b23;
-    }
-    main {
-        max-width: 900px;
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-    .section-title {
-        color: #c8102e;
-        text-align: center;
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-    .content-box {
-        background: #f8f8f8;
-        padding: 20px;
-        margin-bottom: 25px;
-        border-left: 5px solid #c8102e;
-        min-height: 120px;
-        border-radius: 5px;
-    }
-    footer {
-        background: #222;
-        color: #fff;
-        text-align: center;
-        padding: 15px;
+        font-size: 36px;
+        margin-bottom: 10px;
     }
     .btn {
         display: inline-block;
-        background-color: #c8102e;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
+        background-color: #fff;
+        color: #c8102e;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 10px;
         text-decoration: none;
         transition: 0.3s;
     }
     .btn:hover {
         background-color: #a50b23;
+        color: #fff;
+    }
+    .content-box {
+        margin: 30px auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 2px solid #c8102e;
+        border-radius: 10px;
+        min-height: 150px;
     }
 </style>
 </head>
@@ -93,46 +56,12 @@
 <header>
     <img src="logo.png" alt="NEZER TEAM Logo">
     <h1>@TeamNezer</h1>
-    <p>Профиль команды NEZER</p>
-    <nav>
-        <a href="#about">О профиле</a>
-        <a href="#gallery">Галерея</a>
-        <a href="#contact">Контакты</a>
-    </nav>
+    <a href="https://t.me/TeamNezer" class="btn">@TeamNezer</a>
 </header>
 
-<main>
-    <section id="about">
-        <h2 class="section-title">О профиле</h2>
-        <div class="content-box"></div>
-    </section>
-
-    <section id="gallery">
-        <h2 class="section-title">Галерея</h2>
-        <div class="content-box"></div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Контакты</h2>
-        <div class="content-box">
-            <p>Наш контакт: <a href="https://t.me/TeamNezer" class="btn">@TeamNezer</a></p>
-        </div>
-    </section>
-</main>
-
-<footer>
-    © 2026 NEZER TEAM
-</footer>
-
-<script>
-    // Плавная прокрутка по меню
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            document.querySelector(link.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-        });
-    });
-</script>
+<div class="content-box">
+    <!-- сюда потом можно добавлять фото, текст, виджеты -->
+</div>
 
 </body>
 </html>
