@@ -50,6 +50,7 @@ header h1{
   font-size:42px;
   letter-spacing:3px;
   color:#ff2e2e;
+  text-shadow:0 0 10px #ff2e2e;
 }
 
 .section-title{
@@ -57,6 +58,7 @@ header h1{
   margin:40px 0 20px;
   font-size:24px;
   color:#ff3b3b;
+  text-transform:uppercase;
 }
 
 .roster{
@@ -73,12 +75,30 @@ header h1{
   padding:25px;
   text-align:center;
   backdrop-filter:blur(10px);
-  transition:0.4s;
+  transition:0.5s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,0,0,0.2), rgba(255,255,255,0.1));
+  transform:skewX(-20deg);
+  transition:0.5s;
+}
+
+.card:hover::before{
+  left:200%;
 }
 
 .card:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:0 0 20px rgba(255,0,0,0.5);
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px rgba(255,0,0,0.7);
 }
 
 .card img{
@@ -88,11 +108,17 @@ header h1{
   margin-bottom:15px;
   border:2px solid #ff2e2e;
   object-fit:cover;
+  transition:0.5s;
+}
+
+.card:hover img{
+  transform:rotate(10deg) scale(1.1);
 }
 
 .card h3{
   font-size:20px;
   margin-bottom:5px;
+  text-transform:uppercase;
 }
 
 .role{
@@ -109,6 +135,11 @@ header h1{
   font-size:14px;
   font-weight:bold;
   box-shadow:0 0 10px rgba(255,0,0,0.6);
+  transition:0.4s;
+}
+
+.card:hover .elo{
+  box-shadow:0 0 20px rgba(255,0,0,1);
 }
 
 .contacts{
@@ -127,6 +158,7 @@ header h1{
 
 .contacts a:hover{
   color:white;
+  text-shadow:0 0 10px #ff2e2e;
 }
 </style>
 </head>
@@ -134,7 +166,7 @@ header h1{
 <body>
 
 <header>
-  <img src="logo.jpg" class="logo">
+  <img src="logo.jpg" class="logo" alt="NEZER TEAM Logo">
   <h1>NEZER TEAM</h1>
 </header>
 
@@ -142,21 +174,21 @@ header h1{
 
 <div class="roster">
   <div class="card">
-    <img src="avatar1.jpg">
+    <img src="avatar1.jpg" alt="KAZ">
     <h3>KAZ</h3>
     <div class="role">IGL / Entry</div>
     <div class="elo">ELO 2450</div>
   </div>
 
   <div class="card">
-    <img src="avatar1.jpg">
+    <img src="avatar2.jpg" alt="sSaywo">
     <h3>sSaywo</h3>
     <div class="role">AWP</div>
     <div class="elo">ELO 2380</div>
   </div>
 
   <div class="card">
-    <img src="avatar1.jpg">
+    <img src="avatar3.jpg" alt="y9dda">
     <h3>y9dda</h3>
     <div class="role">Rifler</div>
     <div class="elo">ELO 2520</div>
@@ -167,14 +199,14 @@ header h1{
 
 <div class="roster">
   <div class="card">
-    <img src="avatar1.jpg">
+    <img src="avatar1.jpg" alt="PlayerX">
     <h3>PlayerX</h3>
     <div class="role">Support</div>
     <div class="elo">ELO 2200</div>
   </div>
 
   <div class="card">
-    <img src="avatar1.jpg">
+    <img src="avatar1.jpg" alt="PlayerY">
     <h3>PlayerY</h3>
     <div class="role">Flex</div>
     <div class="elo">ELO 2100</div>
