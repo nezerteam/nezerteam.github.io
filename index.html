@@ -36,13 +36,15 @@ header{
 .logo{
   width:140px;
   margin-bottom:20px;
-  filter:drop-shadow(0 0 15px rgba(255,0,0,0.6));
-  animation:logoMove 3s ease-in-out infinite alternate;
+  border-radius:20px; /* мягкие границы */
+  filter: drop-shadow(0 0 15px rgba(255,0,0,0.6));
+  animation:logoPulse 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes logoMove{
-  from{ transform:translateY(0px); }
-  to{ transform:translateY(-10px); }
+@keyframes logoPulse{
+  0%{ transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,0,0,0.4)); }
+  50%{ transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(255,0,0,0.7)); }
+  100%{ transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,0,0,0.4)); }
 }
 
 header h1{
@@ -92,7 +94,24 @@ header h1{
 
 .card h3{
   font-size:20px;
+  margin-bottom:5px;
+}
+
+.role{
+  font-size:14px;
+  color:#ff6b6b;
+  margin-bottom:5px;
+}
+
+.elo{
+  display:inline-block;
+  padding:6px 14px;
+  background:linear-gradient(45deg,#ff2e2e,#a80000);
+  border-radius:20px;
+  font-size:14px;
+  font-weight:bold;
   margin-bottom:10px;
+  box-shadow:0 0 10px rgba(255,0,0,0.6);
 }
 
 .profile-btn{
@@ -144,30 +163,40 @@ header h1{
   <div class="card">
     <img src="avatar1.jpg">
     <h3>NEZOK1</h3>
+    <div class="role">IGL / Entry</div>
+    <div class="elo">ELO 2450</div>
     <a href="profile-nezok1.html" class="profile-btn">Профиль</a>
   </div>
 
   <div class="card">
     <img src="avatar2.jpg">
     <h3>NEZOK2</h3>
+    <div class="role">Rifler</div>
+    <div class="elo">ELO 2520</div>
     <a href="profile-nezok2.html" class="profile-btn">Профиль</a>
   </div>
 
   <div class="card">
     <img src="avatar3.jpg">
     <h3>NEZOK3</h3>
+    <div class="role">Support</div>
+    <div class="elo">ELO 2400</div>
     <a href="profile-nezok3.html" class="profile-btn">Профиль</a>
   </div>
 
   <div class="card">
     <img src="avatar4.jpg">
     <h3>SSAYWO</h3>
+    <div class="role">AWP</div>
+    <div class="elo">ELO 2380</div>
     <a href="profile-ssaywo.html" class="profile-btn">Профиль</a>
   </div>
 
   <div class="card">
     <img src="avatar5.jpg">
     <h3>PRESIDIOC</h3>
+    <div class="role">Flex</div>
+    <div class="elo">ELO 2350</div>
     <a href="profile-presidioc.html" class="profile-btn">Профиль</a>
   </div>
 
@@ -180,12 +209,16 @@ header h1{
   <div class="card">
     <img src="avatar6.jpg">
     <h3>PLAYER X</h3>
+    <div class="role">AWP</div>
+    <div class="elo">ELO 2200</div>
     <a href="profile-playerx.html" class="profile-btn">Профиль</a>
   </div>
 
   <div class="card">
     <img src="avatar7.jpg">
     <h3>PLAYER Y</h3>
+    <div class="role">Flex</div>
+    <div class="elo">ELO 2100</div>
     <a href="profile-playery.html" class="profile-btn">Профиль</a>
   </div>
 
